@@ -18,6 +18,21 @@ body {
     color: var(--district-text);
 }
 
+.logo-text h1,
+.logo-name {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.logo-text h1 span,
+.logo-name span {
+    color: #00ff88;
+}
+
 main {
     overflow: hidden;
 }

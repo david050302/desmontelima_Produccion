@@ -145,3 +145,46 @@ window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 
 });
+
+/* ==========================================
+   MENÚ HAMBURGUESA MÓVIL
+========================================== */
+
+const headerInner = document.querySelector(".header-inner");
+const navMenu = document.querySelector(".nav-menu");
+let mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+
+if (headerInner && navMenu && !mobileMenuToggle) {
+    mobileMenuToggle = document.createElement("button");
+    mobileMenuToggle.type = "button";
+    mobileMenuToggle.className = "mobile-menu-toggle";
+    mobileMenuToggle.setAttribute("aria-expanded", "false");
+    mobileMenuToggle.setAttribute("aria-label", "Abrir menú");
+    mobileMenuToggle.innerHTML = `<span class="bar"></span>`;
+    headerInner.insertBefore(mobileMenuToggle, headerInner.querySelector("nav") || headerInner.firstChild);
+}
+
+if (mobileMenuToggle && navMenu) {
+    mobileMenuToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const expanded = mobileMenuToggle.getAttribute("aria-expanded") === "true";
+        mobileMenuToggle.setAttribute("aria-expanded", String(!expanded));
+        navMenu.classList.toggle("mobile-open");
+    });
+
+    navMenu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            if (navMenu.classList.contains("mobile-open")) {
+                mobileMenuToggle.setAttribute("aria-expanded", "false");
+                navMenu.classList.remove("mobile-open");
+            }
+        });
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!navMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+            mobileMenuToggle.setAttribute("aria-expanded", "false");
+            navMenu.classList.remove("mobile-open");
+        }
+    });
+}

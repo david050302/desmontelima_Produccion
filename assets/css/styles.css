@@ -25,6 +25,8 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
+            gap: 18px;
         }
 
         .header {
@@ -110,6 +112,67 @@
         }
 
         .nav-menu a:hover { color: #00ff88; }
+
+        .mobile-menu-toggle {
+            display: none;
+            border: 0;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 16px;
+            padding: 0;
+            transition: background 0.25s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-toggle .bar {
+            display: block;
+            width: 26px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+
+        .mobile-menu-toggle .bar::before,
+        .mobile-menu-toggle .bar::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            width: 22px;
+            height: 2px;
+            background: currentColor;
+            border-radius: 999px;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-toggle .bar::before {
+            top: -7px;
+        }
+
+        .mobile-menu-toggle .bar::after {
+            top: 7px;
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] .bar {
+            background: transparent;
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] .bar::before {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-toggle[aria-expanded="true"] .bar::after {
+            transform: translateY(-7px) rotate(-45deg);
+        }
 
         .header-phone {
             display: flex;
@@ -1446,6 +1509,11 @@
         }
 
         @media (max-width: 768px) {
+            .header-inner {
+                flex-wrap: wrap;
+                align-items: flex-start;
+            }
+            .mobile-menu-toggle { display: inline-flex; }
             .nav-menu { display: none; }
             .hero { padding: 50px 0; min-height: auto; }
             .hero h2 { font-size: 2.4rem; }
@@ -1456,6 +1524,57 @@
             .hero-buttons { flex-direction: column; }
             .btn-wa, .btn-call { justify-content: center; }
             .floating-wa-card { display: none; }
+        }
+
+        .nav-menu.mobile-open {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            position: absolute;
+            top: calc(100% + 12px);
+            right: 16px;
+            left: 16px;
+            z-index: 1000;
+            padding: 22px 20px;
+            border-radius: 24px;
+            background: rgba(5, 5, 5, 0.98);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-menu.mobile-open a {
+            padding: 16px 18px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-menu.mobile-open a {
+            padding: 14px 16px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .nav-menu.mobile-open .nav-dropdown__menu {
+            position: static;
+            width: 100%;
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: none !important;
+            margin-top: 10px;
+            padding: 12px 0 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .nav-menu.mobile-open .nav-dropdown__menu a {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.04);
+            margin-bottom: 10px;
+        }
+
+        .nav-menu.mobile-open .nav-dropdown__trigger i {
+            transform: rotate(180deg);
         }
 
         @media (max-width: 480px) {
