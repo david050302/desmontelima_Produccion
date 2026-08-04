@@ -2,5 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://desmontelima.com/sitemap.xml
-
-Host: https://desmontelima.com
