@@ -12,7 +12,7 @@
 
     <!-- TRABAJOS -->
     <url>
-        <loc>https://desmontelima.com/trabajos</loc>
+        <loc>https://desmontelima.com/trabajos/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -20,7 +20,7 @@
 
     <!-- BLOG -->
     <url>
-        <loc>https://desmontelima.com/blog</loc>
+        <loc>https://desmontelima.com/blog/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
@@ -28,7 +28,7 @@
 
     <!-- CONTACTO -->
     <url>
-        <loc>https://desmontelima.com/contacto</loc>
+        <loc>https://desmontelima.com/contacto/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -37,56 +37,56 @@
     <!-- DISTRITOS -->
 
     <url>
-        <loc>https://desmontelima.com/desmonte-surco</loc>
+        <loc>https://desmontelima.com/desmonte-surco/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/desmonte-miraflores</loc>
+        <loc>https://desmontelima.com/desmonte-miraflores/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/desmonte-san-isidro</loc>
+        <loc>https://desmontelima.com/desmonte-san-isidro/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/desmonte-san-borja</loc>
+        <loc>https://desmontelima.com/desmonte-san-borja/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/desmonte-la-molina</loc>
+        <loc>https://desmontelima.com/desmonte-la-molina/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/desmonte-surquillo</loc>
+        <loc>https://desmontelima.com/desmonte-surquillo/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/desmonte-san-luis</loc>
+        <loc>https://desmontelima.com/desmonte-san-luis/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/desmonte-magdalena</loc>
+        <loc>https://desmontelima.com/desmonte-magdalena/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
@@ -95,42 +95,42 @@
     <!-- ARTÍCULOS -->
 
     <url>
-        <loc>https://desmontelima.com/blog/como-calcular-desmonte</loc>
+        <loc>https://desmontelima.com/blog/como-calcular-desmonte/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/blog/como-eliminar-desmonte-lima</loc>
+        <loc>https://desmontelima.com/blog/como-eliminar-desmonte-lima/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/blog/cuantas-bolsas-entran-camion</loc>
+        <loc>https://desmontelima.com/blog/cuantas-bolsas-entran-camion/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/blog/cuanto-cuesta-retirar-desmonte-lima</loc>
+        <loc>https://desmontelima.com/blog/cuanto-cuesta-retirar-desmonte-lima/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/blog/desmonte-embolsado-vs-suelto</loc>
+        <loc>https://desmontelima.com/blog/desmonte-embolsado-vs-suelto/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://desmontelima.com/blog/retiro-escombros-remodelacion</loc>
+        <loc>https://desmontelima.com/blog/retiro-escombros-remodelacion/</loc>
         <lastmod>2026-07-31</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
