@@ -991,3 +991,78 @@ main {
         justify-content: center;
     }
 }
+
+
+/* =========================================================
+   FIX DEFINITIVO HEADER MÓVIL EN PÁGINAS DE DISTRITO
+   Motivo: en los distritos .header-inner contiene un <nav>
+   adicional. Ese <nav> se convertía en un 4.º elemento del grid
+   y empujaba .header-phone a una segunda fila. Al abrir el menú,
+   el toggle pasa a position:fixed y por eso "se acomodaba".
+========================================================= */
+@media (max-width: 768px) {
+    /* El wrapper <nav> NO debe ocupar una celda del grid */
+    .header .header-inner > nav {
+        position: absolute !important;
+        width: 0 !important;
+        height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Fijamos explícitamente cada elemento en su columna */
+    .header .mobile-menu-toggle {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+
+    .header .logo {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        min-width: 0 !important;
+    }
+
+    .header .header-phone {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        width: auto !important;
+        min-width: 0 !important;
+        margin: 0 !important;
+        justify-self: end !important;
+        align-self: center !important;
+        flex-wrap: nowrap !important;
+    }
+
+    /* Los distritos usan .logo-name en vez de h1 */
+    .header .logo-name {
+        margin: 0 !important;
+        color: #fff !important;
+        font-size: clamp(12px, 3.4vw, 16px) !important;
+        font-weight: 900 !important;
+        line-height: 1 !important;
+        letter-spacing: .2px !important;
+        text-transform: uppercase !important;
+        white-space: nowrap !important;
+    }
+
+    .header .logo-name span {
+        color: #00ff88 !important;
+    }
+
+    .header .logo-text p {
+        margin: 2px 0 0 !important;
+        font-size: 8px !important;
+        white-space: nowrap !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .header .logo-name {
+        font-size: 11px !important;
+    }
+
+    .header .logo-text p {
+        font-size: 7px !important;
+    }
+}

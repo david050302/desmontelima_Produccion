@@ -1697,3 +1697,292 @@ textarea {
     color: inherit;
     text-decoration: none;
 }
+
+
+/* =========================================================
+   AJUSTES RESPONSIVE FINALES — CONTACTO
+   El header global ya lo controla styles.css; estas reglas
+   solo optimizan la página de contacto en teléfonos.
+========================================================= */
+
+@media (max-width: 780px) {
+    /* La página ya usa el header global (.header/.header-inner).
+       Evitamos que cualquier bloque antiguo de header local interfiera. */
+    .site-header,
+    .header-container,
+    .main-navigation,
+    .mobile-menu-button,
+    .header-whatsapp {
+        /* No se usan en el HTML actual de /contacto. */
+    }
+
+    .contact-hero {
+        padding: 58px 0 82px;
+    }
+
+    .contact-hero__container {
+        gap: 38px;
+    }
+
+    .contact-hero__content h1 {
+        font-size: clamp(2.45rem, 11.5vw, 3.8rem);
+        line-height: .94;
+        letter-spacing: -0.055em;
+    }
+
+    .contact-hero__description {
+        margin-top: 20px;
+        font-size: .94rem;
+        line-height: 1.65;
+    }
+
+    .contact-hero__actions {
+        margin-top: 28px;
+        gap: 11px;
+    }
+
+    .contact-button {
+        min-height: 54px;
+    }
+
+    .contact-hero__trust {
+        margin-top: 22px;
+    }
+
+    .contact-hero__card {
+        width: 100%;
+        max-width: none;
+    }
+
+    .contact-info-grid {
+        margin-top: -30px;
+    }
+
+    .contact-form-section,
+    .contact-process-section,
+    .contact-benefits-section,
+    .contact-coverage-section,
+    .contact-faq-section {
+        padding: 72px 0;
+    }
+
+    .contact-section-heading {
+        margin-bottom: 38px;
+    }
+
+    .contact-form-content h2,
+    .contact-section-heading h2,
+    .contact-benefits-content h2,
+    .contact-coverage-content h2,
+    .contact-faq-heading h2 {
+        font-size: clamp(2rem, 9vw, 3rem);
+        line-height: 1.02;
+    }
+
+    .contact-process-card {
+        min-height: 240px;
+    }
+
+    .contact-process-card__icon {
+        margin-bottom: 46px;
+    }
+
+    .contact-map-card {
+        min-height: 400px;
+    }
+
+    .contact-final-cta {
+        padding-top: 32px;
+    }
+
+    .contact-final-cta__box {
+        min-height: 0;
+        padding: 34px 24px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 26px;
+    }
+
+    .contact-final-cta__content h2 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .contact-final-cta__button {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 430px) {
+    .contact-container {
+        width: min(calc(100% - 24px), var(--contact-container));
+    }
+
+    .contact-breadcrumb {
+        padding: 14px 0;
+    }
+
+    .contact-breadcrumb ol {
+        gap: 7px;
+        font-size: .76rem;
+        flex-wrap: wrap;
+    }
+
+    .contact-hero {
+        padding: 46px 0 70px;
+    }
+
+    .contact-hero__content h1 {
+        font-size: clamp(2.2rem, 10.8vw, 2.8rem);
+        line-height: .96;
+    }
+
+    .contact-hero__description {
+        font-size: .9rem;
+    }
+
+    .contact-hero__card {
+        padding: 19px;
+        border-radius: 18px;
+    }
+
+    .contact-hero__card-header {
+        padding-bottom: 18px;
+    }
+
+    .contact-quick-list {
+        margin-top: 20px;
+        gap: 16px;
+    }
+
+    .contact-hero__card-message {
+        margin-top: 20px;
+        padding: 14px;
+    }
+
+    .contact-info-section {
+        padding-bottom: 64px;
+    }
+
+    .contact-info-card {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .contact-form-section,
+    .contact-process-section,
+    .contact-benefits-section,
+    .contact-coverage-section,
+    .contact-faq-section {
+        padding: 62px 0;
+    }
+
+    .contact-form {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .contact-field {
+        margin-bottom: 16px;
+    }
+
+    .contact-field input,
+    .contact-field select {
+        height: 50px;
+    }
+
+    .contact-process-card {
+        min-height: 220px;
+        padding: 20px;
+    }
+
+    .contact-process-card__icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 38px;
+    }
+
+    .contact-benefit-card {
+        padding: 19px;
+        gap: 13px;
+    }
+
+    .contact-benefit-card > span {
+        width: 42px;
+        min-width: 42px;
+        height: 42px;
+    }
+
+    .contact-districts {
+        gap: 8px;
+    }
+
+    .contact-districts a {
+        min-height: 38px;
+        padding: 0 12px;
+        font-size: .72rem;
+    }
+
+    .contact-map-card {
+        min-height: 360px;
+        border-radius: 18px;
+    }
+
+    .contact-map-card::before {
+        width: 250px;
+        height: 250px;
+    }
+
+    .contact-map-card::after {
+        width: 165px;
+        height: 165px;
+    }
+
+    .contact-map-card__pin {
+        padding: 6px 8px;
+        font-size: .58rem;
+    }
+
+    .contact-map-card__info {
+        right: 14px;
+        bottom: 14px;
+        left: 14px;
+        padding: 17px;
+    }
+
+    .contact-faq-item summary {
+        min-height: 64px;
+        padding: 0 17px;
+        font-size: .84rem;
+        gap: 12px;
+    }
+
+    .contact-faq-item__content {
+        padding: 0 17px 18px;
+    }
+
+    .contact-final-cta__box {
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+}
+
+/* Seguridad contra overflow horizontal en componentes propios de contacto */
+.contact-hero__container,
+.contact-form-layout,
+.contact-benefits-layout,
+.contact-coverage-layout,
+.contact-faq-layout,
+.contact-info-grid,
+.contact-process-grid,
+.contact-benefits-grid {
+    min-width: 0;
+}
+
+.contact-hero__content,
+.contact-form-content,
+.contact-benefits-content,
+.contact-coverage-content,
+.contact-faq-heading {
+    min-width: 0;
+}
