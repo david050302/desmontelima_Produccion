@@ -147,44 +147,93 @@ window.addEventListener("load", () => {
 });
 
 /* ==========================================
-   MENÚ HAMBURGUESA MÓVIL
+   MENÚ HAMBURGUESA MÓVIL (drawer) + overlay
+   - crea toggle si falta
+   - bloquea scroll con body.no-scroll
+   - crea overlay clicable que cierra
+   - convierte dropdown en colapsable
 ========================================== */
 
 const headerInner = document.querySelector(".header-inner");
 const navMenu = document.querySelector(".nav-menu");
 let mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+let mobileMenuOverlay = null;
 
-if (headerInner && navMenu && !mobileMenuToggle) {
-    mobileMenuToggle = document.createElement("button");
-    mobileMenuToggle.type = "button";
-    mobileMenuToggle.className = "mobile-menu-toggle";
-    mobileMenuToggle.setAttribute("aria-expanded", "false");
-    mobileMenuToggle.setAttribute("aria-label", "Abrir menú");
-    mobileMenuToggle.innerHTML = `<span class="bar"></span>`;
-    headerInner.insertBefore(mobileMenuToggle, headerInner.querySelector("nav") || headerInner.firstChild);
+function createMobileToggleIfNeeded() {
+    if (!headerInner || !navMenu) return;
+    if (!mobileMenuToggle) {
+        mobileMenuToggle = document.createElement("button");
+        mobileMenuToggle.type = "button";
+        mobileMenuToggle.className = "mobile-menu-toggle";
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+        mobileMenuToggle.setAttribute("aria-label", "Abrir menú");
+        mobileMenuToggle.innerHTML = `<span class="bar"></span>`;
+        // insert before first element so it appears on the left
+        headerInner.insertBefore(mobileMenuToggle, headerInner.firstChild);
+    }
 }
+
+function openMobileMenu() {
+    if (!mobileMenuToggle || !navMenu) return;
+    mobileMenuToggle.setAttribute("aria-expanded", "true");
+    navMenu.classList.add("mobile-open");
+    document.body.classList.add("no-scroll");
+
+    if (!mobileMenuOverlay) {
+        mobileMenuOverlay = document.createElement("div");
+        mobileMenuOverlay.className = "mobile-menu-overlay";
+        document.body.appendChild(mobileMenuOverlay);
+        mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+    }
+}
+
+function closeMobileMenu() {
+    if (!mobileMenuToggle || !navMenu) return;
+    mobileMenuToggle.setAttribute("aria-expanded", "false");
+    navMenu.classList.remove("mobile-open");
+    document.body.classList.remove("no-scroll");
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.remove();
+        mobileMenuOverlay = null;
+    }
+}
+
+createMobileToggleIfNeeded();
 
 if (mobileMenuToggle && navMenu) {
     mobileMenuToggle.addEventListener("click", (event) => {
         event.stopPropagation();
         const expanded = mobileMenuToggle.getAttribute("aria-expanded") === "true";
-        mobileMenuToggle.setAttribute("aria-expanded", String(!expanded));
-        navMenu.classList.toggle("mobile-open");
+        if (expanded) closeMobileMenu();
+        else openMobileMenu();
     });
 
+    // Close the drawer when a link is clicked (good for mobile)
     navMenu.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
             if (navMenu.classList.contains("mobile-open")) {
-                mobileMenuToggle.setAttribute("aria-expanded", "false");
-                navMenu.classList.remove("mobile-open");
+                closeMobileMenu();
             }
         });
     });
 
+    // Click outside should also close the drawer (desktop fallback)
     document.addEventListener("click", (event) => {
         if (!navMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
-            mobileMenuToggle.setAttribute("aria-expanded", "false");
-            navMenu.classList.remove("mobile-open");
+            closeMobileMenu();
         }
     });
+
+    // make dropdowns collapsible on mobile
+    document.querySelectorAll('.nav-dropdown__trigger').forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            // allow default behavior on wide screens; on mobile toggle submenu
+            const submenu = btn.nextElementSibling;
+            if (!submenu) return;
+            e.preventDefault();
+            submenu.classList.toggle('open');
+            btn.setAttribute('aria-expanded', submenu.classList.contains('open'));
+        });
+    });
+
 }

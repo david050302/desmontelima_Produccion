@@ -798,6 +798,191 @@
     font-weight: 800;
     line-height: 1.3;
 
+
+/* ==========================
+   Responsive / Mobile-first
+   Target: smartphones up to tablets
+   ========================== */
+
+@media (max-width: 768px) {
+
+    /* compact header for mobile */
+    .header {
+        padding: 10px 0;
+    }
+
+    .header-inner {
+        padding: 0 14px;
+        gap: 10px;
+    }
+
+    .logo-text h1 {
+        font-size: 1rem;
+        line-height: 1;
+    }
+
+    .logo-text p { display: none; }
+
+    /* show mobile toggle, hide desktop nav */
+    .mobile-menu-toggle { display: flex; }
+    .nav-menu { /* transform into off-canvas drawer */
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 84%;
+        max-width: 360px;
+        transform: translateX(-100%);
+        transition: transform .35s ease;
+        background: #000;
+        padding: 28px 18px;
+        overflow: auto;
+        z-index: 1100;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .nav-menu.mobile-open { transform: translateX(0); }
+
+    .nav-menu li { margin-bottom: 6px; }
+
+    .nav-menu a, .nav-dropdown__trigger {
+        display: block;
+        padding: 12px 8px;
+        font-size: 1rem;
+        font-weight: 800;
+        color: #ddd;
+        text-decoration: none;
+        border-radius: 8px;
+    }
+
+    .nav-menu a:hover { background: rgba(255,255,255,0.02); color: #fff; }
+
+    /* compact dropdown handling */
+    .nav-dropdown__menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .28s ease;
+        margin-left: 6px;
+        border-left: 2px solid rgba(255,255,255,0.02);
+        padding-left: 8px;
+    }
+
+    .nav-dropdown__menu a { padding: 10px 6px; font-size: 0.98rem; display: block; }
+    .nav-dropdown__menu.open { max-height: 520px; }
+
+    /* overlay for drawer */
+    .mobile-menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 1090; }
+    body.no-scroll { overflow: hidden; }
+
+    /* hide header phone text and keep whatsapp icon visible */
+    .header-phone-text { display: none; }
+
+    /* Hero adjustments to keep CTA within first viewport */
+    .hero {
+        min-height: 520px;
+        padding: 40px 0;
+        background-position: center 40%;
+    }
+
+    .hero-inner { padding: 0 14px; }
+
+    .hero-content { max-width: 540px; }
+
+    .hero-title {
+        font-size: clamp(1.8rem, 6.6vw, 2.8rem);
+        line-height: 1;
+        letter-spacing: -0.5px;
+        margin-bottom: 14px;
+    }
+
+    .hero-subtitle { font-size: 0.95rem; max-width: 100%; margin-bottom: 18px; }
+
+    .hero-tags { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; margin-bottom: 18px; }
+
+    .hero-buttons { display: flex; flex-direction: column; gap: 12px; margin-bottom: 18px; }
+
+    .btn-wa, .btn-call { width: 100%; padding: 14px 16px; min-height: 56px; font-size: 1rem; border-radius: 12px; }
+
+    .btn-wa div, .btn-call div { align-items: flex-start; }
+
+    .btn-wa small, .btn-call small { font-size: 0.78rem; }
+
+    /* ensure floating WhatsApp doesn't cover CTAs */
+    .floating-wa-card { display: none; }
+
+    /* clients / avatars: hide on small widths to save space */
+    .hero-clients { display: none; }
+
+}
+
+/* Extra small phones: tighten spacing further */
+@media (max-width: 420px) {
+    .header-inner { gap: 8px; }
+    .logo-icon { width: 40px; height: 40px; }
+    .logo-text h1 { font-size: 0.95rem; }
+    .hero { min-height: 480px; }
+    .hero-title { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+    .nav-menu { width: 90%; max-width: 320px; }
+}
+
+/* Fine-tune for many small breakpoints requested */
+@media (max-width: 390px) {
+    .hero { min-height: 460px; background-position: center 30%; }
+    .hero-title { font-size: clamp(1.5rem, 7.2vw, 2.2rem); }
+    .nav-menu a, .nav-dropdown__trigger { padding: 10px 8px; font-size: 0.98rem; }
+}
+
+@media (max-width: 375px) {
+    .hero { min-height: 440px; background-position: center 28%; }
+    .hero-title { font-size: clamp(1.45rem, 7.6vw, 2.05rem); }
+}
+
+@media (max-width: 360px) {
+    .hero { min-height: 420px; background-position: center 25%; }
+    .hero-title { font-size: clamp(1.4rem, 8vw, 1.95rem); }
+    .nav-menu { width: 92%; }
+}
+
+@media (max-width: 320px) {
+    .hero { min-height: 400px; background-position: center 22%; padding: 28px 0; }
+    .hero-title { font-size: clamp(1.3rem, 8.5vw, 1.85rem); }
+    .nav-menu { max-width: 300px; }
+}
+
+/* Tablet adjustments (up to 768 already partly handled) */
+@media (max-width: 768px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .materials-grid { grid-template-columns: repeat(2, 1fr); }
+    .works-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 480px) {
+    .stats-inner { grid-template-columns: 1fr; }
+    .materials-grid { grid-template-columns: 1fr; }
+    .works-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+}
+
+/* Ensure images and media never overflow horizontally */
+img, picture, video, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* compact dropdown rows in drawer */
+.nav-menu a, .nav-dropdown__menu a { padding-top: 8px; padding-bottom: 8px; }
+.nav-dropdown__menu a { border-radius: 6px; }
+
+/* prevent accidental horizontal scroll from long content */
+main, section, .section-inner, .hero-inner { width: 100%; max-width: 100%; box-sizing: border-box; }
+
+/* small adjustment to prevent any transform-caused overflow */
+html, body { -webkit-tap-highlight-color: transparent; }
+
+
     text-shadow: 0 3px 14px rgba(0, 0, 0, 0.85);
 }
 
