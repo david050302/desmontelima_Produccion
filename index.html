@@ -11,6 +11,23 @@
 
         gtag('config', 'AW-18352295917');
     </script>
+
+    <!-- Conversión: Clic WhatsApp - Web -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18352295917/cNXCCMX-j-UcEO2fh69E',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminación de Desmonte en Lima | Desmonte Lima</title>
@@ -206,14 +223,14 @@
 
         <div class="header-phone">
 
-            <a
-                href="https://wa.me/51990201670"
-                class="whatsapp-icon-header"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <i class="fab fa-whatsapp"></i>
-            </a>
+               <a
+        href="https://wa.me/51990201670"
+        class="whatsapp-icon-header"
+        onclick="return gtag_report_conversion(this.href);"
+        rel="noopener noreferrer"
+    >
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
             <div class="header-phone-text">
 
@@ -284,19 +301,19 @@
 
             <div class="hero-buttons">
 
-                <a
-                    href="https://wa.me/51990201670?text=Hola,%20deseo%20cotizar%20el%20retiro%20de%20desmonte"
-                    class="btn-wa"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <i class="fab fa-whatsapp"></i>
+                 <a
+        href="https://wa.me/51990201670?text=Hola,%20deseo%20cotizar%20el%20retiro%20de%20desmonte"
+        class="btn-wa"
+        onclick="return gtag_report_conversion(this.href);"
+        rel="noopener noreferrer"
+    >
+        <i class="fab fa-whatsapp"></i>
 
-                    <div>
-                        ENVIAR FOTO POR WHATSAPP
-                        <small>Cotiza gratis al instante</small>
-                    </div>
-                </a>
+        <div>
+            ENVIAR FOTO POR WHATSAPP
+            <small>Cotiza gratis al instante</small>
+        </div>
+    </a>
 
                 <a href="tel:990201670" class="btn-call">
                     <i class="fas fa-phone"></i>
@@ -328,23 +345,23 @@
         </div>
 
         <a
-            href="https://wa.me/51990201670?text=Hola,%20deseo%20cotizar%20el%20retiro%20de%20desmonte"
-            class="floating-wa-card"
-            target="_blank"
-            rel="noopener noreferrer"
-        >
-            <i class="fab fa-whatsapp"></i>
+    href="https://wa.me/51990201670?text=Hola,%20deseo%20cotizar%20el%20retiro%20de%20desmonte"
+    class="floating-wa-card"
+    onclick="return gtag_report_conversion(this.href);"
+    rel="noopener noreferrer"
+>
+    <i class="fab fa-whatsapp"></i>
 
-            <div>
-                <strong>¿Necesitas retirar desmonte?</strong>
+    <div>
+        <strong>¿Necesitas retirar desmonte?</strong>
 
-                <p>
-                    Escríbenos por WhatsApp
-                    <br>
-                    Respondemos en menos de 5 min
-                </p>
-            </div>
-        </a>
+        <p>
+            Escríbenos por WhatsApp
+            <br>
+            Respondemos en menos de 5 min
+        </p>
+    </div>
+</a>
 
     </div>
 
@@ -845,7 +862,7 @@
                         <a
                             href="https://wa.me/51990201670?text=Hola%2C%20deseo%20cotizar%20la%20eliminación%20de%20desmonte.%20Adjunto%20las%20fotos%3A"
                             class="payment-cta__button"
-                            target="_blank"
+                           onclick="return gtag_report_conversion(this.href);"
                             rel="noopener noreferrer"
                         >
                             <i class="fa-brands fa-whatsapp"></i>
@@ -965,7 +982,7 @@
     </footer>
 
     <!-- FLOATING WA -->
-    <a href="https://wa.me/51990201670?text=Hola,%20deseo%20cotizar%20retiro%20de%20desmonte" class="wa-float" target="_blank" aria-label="WhatsApp">
+    <a href="https://wa.me/51990201670?text=Hola,%20deseo%20cotizar%20retiro%20de%20desmonte" class="wa-float"  onclick="return gtag_report_conversion(this.href);" aria-label="WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 

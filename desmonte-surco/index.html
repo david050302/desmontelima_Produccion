@@ -12,7 +12,24 @@
 
         gtag('config', 'AW-18352295917');
     </script>
-    
+
+     <!-- Conversión: Clic WhatsApp - Web -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-18352295917/cNXCCMX-j-UcEO2fh69E',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+
+
     <meta charset="UTF-8">
 
     <meta
@@ -405,7 +422,7 @@
                 <a
                     href="https://wa.me/51990201670?text=Hola%2C%20deseo%20cotizar%20el%20retiro%20de%20desmonte%20en%20Surco."
                     class="whatsapp-icon-header"
-                    target="_blank"
+                    onclick="return gtag_report_conversion(this.href);"
                     rel="noopener noreferrer"
                     aria-label="Cotizar retiro de desmonte en Surco"
                 >
@@ -496,7 +513,7 @@
                         <a
                             href="https://wa.me/51990201670?text=Hola%2C%20deseo%20cotizar%20la%20eliminaci%C3%B3n%20de%20desmonte%20en%20Surco.%20Tengo%20aproximadamente%20____%20bolsas%20y%20adjunto%20fotograf%C3%ADas."
                             class="btn-wa"
-                            target="_blank"
+                            onclick="return gtag_report_conversion(this.href);"
                             rel="noopener noreferrer"
                         >
 
@@ -851,7 +868,7 @@
 
                     <a
                         href="https://wa.me/51990201670?text=Hola%2C%20deseo%20consultar%20si%20atienden%20mi%20zona%20en%20Santiago%20de%20Surco."
-                        target="_blank"
+                       onclick="return gtag_report_conversion(this.href);"
                         rel="noopener noreferrer"
                     >
                         Consultar mi zona
@@ -1146,7 +1163,7 @@
 
                     <a
                         href="https://wa.me/51990201670?text=Hola%2C%20deseo%20saber%20cu%C3%A1nto%20cuesta%20retirar%20desmonte%20en%20Surco.%20Tengo%20aproximadamente%20____%20bolsas%20y%20adjunto%20fotograf%C3%ADas."
-                        target="_blank"
+                        onclick="return gtag_report_conversion(this.href);"
                         rel="noopener noreferrer"
                     >
                         Solicitar precio
@@ -1453,7 +1470,7 @@
 
                     <a
                         href="https://wa.me/51990201670?text=Hola%2C%20deseo%20cotizar%20la%20eliminaci%C3%B3n%20de%20desmonte%20en%20Surco.%20Adjunto%20fotograf%C3%ADas."
-                        target="_blank"
+                        onclick="return gtag_report_conversion(this.href);"
                         rel="noopener noreferrer"
                     >
                         <i class="fab fa-whatsapp"></i>
@@ -1557,7 +1574,7 @@
 
                         <a
                             href="https://wa.me/51990201670"
-                            target="_blank"
+                            onclick="return gtag_report_conversion(this.href);"
                             rel="noopener noreferrer"
                         >
                             990 201 670
@@ -1617,7 +1634,7 @@
     <a
         href="https://wa.me/51990201670?text=Hola%2C%20deseo%20cotizar%20el%20retiro%20de%20desmonte%20en%20Surco."
         class="wa-float"
-        target="_blank"
+       onclick="return gtag_report_conversion(this.href);"
         rel="noopener noreferrer"
         aria-label="Cotizar retiro de desmonte en Surco"
     >
